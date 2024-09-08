@@ -1,0 +1,372 @@
+units:
+  px: U + 2
+  py: U + 2
+  pushX: (U / 2)
+  pushY: (U / 2)
+  padX: pushX + 2
+  padY: pushY + 2
+  pad: 2
+  spacing: 0.75
+  controllerW: 18.5
+  controllerH: 33.5
+  belowControllerH: 17
+  caseBorder: 1.5
+  screwThreadRadius: 0.5
+  screwPCBRadius: 4.0
+points:
+  zones:
+    main_matrix:
+      columns:
+        function_keys:
+          key:
+            column_net: P006
+        one:
+          key:
+            stagger: 0.3U
+            splay: -0
+            column_net: P031
+        two:
+          key:
+            stagger: 0.25U
+            splay: -3
+            column_net: P008
+        three:
+          key:
+            stagger: -0.05U
+            column_net: P029
+        four:
+          key:
+            stagger: -0.25U
+            column_net: P017
+        five:
+          key:
+            stagger: -1
+            column_net: P020
+      rows:
+        bottom:
+          row_net: P111
+        home:
+          row_net: P113
+        qwerty:
+          row_net: P115
+        number:
+          row_net: P002
+    thumbs:
+      anchor:
+        ref: main_matrix_three_bottom
+        shift: [-8, -22.5]
+        rotate: -8
+      columns:
+        near:
+          key:
+            stagger: 1
+            column_net: P029
+        home:
+          key:
+            stagger: 0
+            column_net: P017
+        far:
+          key:
+            stagger: 1.25
+            column_net: P020
+        space:
+          key:
+            column_net: P104
+            height: 1.5u
+            stagger: 11
+            shift: [7,0]
+            splay: -27
+      rows:
+        thumb:
+          row_net: P010
+    brace:
+      anchor:
+        ref: main_matrix_five_home
+        shift: [19,-6]
+      columns:
+        curly:
+          key:
+            column_net: P104
+      rows:
+        square:
+          row_net: P113
+  mirror:
+    ref: main_matrix_five_number
+    distance: 90
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [14,14]
+      fillet: 0.5
+  keycaps:
+    - what: rectangle
+      where: true
+      size: [U,U]
+      fillet: 0.5
+  board_left:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: main_matrix_function_keys_number
+          shift: [-padX, padY]
+        - ref: main_matrix_one_number
+          shift: [-padX, padY]
+        - ref: main_matrix_two_number
+          shift: [-padX, padY]
+        - ref: main_matrix_three_number
+          shift: [padX, padY]
+        - ref: main_matrix_four_number
+          shift: [padX, padY]
+        - ref: main_matrix_five_number
+          shift: [padX, padY]
+        - ref: main_matrix_five_number
+          shift: [33, padY]
+        - ref: brace_curly_square
+          shift: [padX + pad, -padY]
+        - ref: thumbs_space_thumb
+          shift: [padX-0.35, padY+2.5]
+        - ref : thumbs_space_thumb
+          shift: [padX-0.35, -padY-2.5]
+        - ref : thumbs_far_thumb
+          shift: [padX, -padY]
+        - ref : thumbs_near_thumb
+          shift: [-padX, -padY]
+        - ref : thumbs_near_thumb
+          shift: [-padX, -padY]
+        - ref: main_matrix_function_keys_bottom
+          shift: [-padX, -padY]
+  board_right:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: mirror_main_matrix_function_keys_number
+          shift: [-padX, padY]
+        - ref: mirror_main_matrix_one_number
+          shift: [-padX, padY]
+        - ref: mirror_main_matrix_two_number
+          shift: [-padX, padY]
+        - ref: mirror_main_matrix_three_number
+          shift: [padX, padY]
+        - ref: mirror_main_matrix_four_number
+          shift: [padX, padY]
+        - ref: mirror_main_matrix_five_number
+          shift: [padX, padY]
+        - ref: mirror_main_matrix_five_number
+          shift: [33, padY]
+        - ref: mirror_brace_curly_square
+          shift: [padX + pad, -padY]
+        - ref: mirror_thumbs_space_thumb
+          shift: [padX-0.35, padY+2.5]
+        - ref : mirror_thumbs_space_thumb
+          shift: [padX-0.35, -padY-2.5]
+        - ref : mirror_thumbs_far_thumb
+          shift: [padX, -padY]
+        - ref : mirror_thumbs_near_thumb
+          shift: [-padX, -padY]
+        - ref : mirror_thumbs_near_thumb
+          shift: [-padX, -padY]
+        - ref: mirror_main_matrix_function_keys_bottom
+          shift: [-padX, -padY]
+  board_right_keys_cutouts:
+    - name: board_right
+    - operation: subtract
+      name: keys
+  board_left_keys_cutouts:
+    - name: board_left
+    - operation: subtract
+      name: keys
+  xl_board_left:
+    - what: polygon
+      fillet: 2
+      operation: stack
+      points:
+        - ref: main_matrix_function_keys_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: main_matrix_one_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: main_matrix_two_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: main_matrix_three_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: main_matrix_four_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: main_matrix_five_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: main_matrix_five_number
+          shift: [31 + caseBorder, padY + caseBorder]
+        - ref: brace_curly_square
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref: thumbs_space_thumb
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref : thumbs_space_thumb
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref : thumbs_far_thumb
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref : thumbs_near_thumb
+          shift: [-padX - caseBorder, -padY - caseBorder]
+        - ref : thumbs_near_thumb
+          shift: [-padX - caseBorder, -padY - caseBorder]
+        - ref: main_matrix_function_keys_bottom
+          shift: [-padX - caseBorder, -padY - caseBorder]
+  xl_board_keys_cutouts:
+    - name: xl_board_left
+    - operation: subtract
+      name: keys
+  xl_board_right:
+    - what: polygon
+      fillet: 2
+      operation: stack
+      points:
+        - ref: mirror_main_matrix_function_keys_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_one_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_two_number
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_three_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_four_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_five_number
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: mirror_main_matrix_five_number
+          shift: [31 + caseBorder, padY + caseBorder]
+        - ref: mirror_brace_curly_square
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref: mirror_thumbs_space_thumb
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref : mirror_thumbs_space_thumb
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref : mirror_thumbs_far_thumb
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref : mirror_thumbs_near_thumb
+          shift: [-padX - caseBorder, -padY - caseBorder]
+        - ref : mirror_thumbs_near_thumb
+          shift: [-padX - caseBorder, -padY - caseBorder]
+        - ref: mirror_main_matrix_function_keys_bottom
+          shift: [-padX - caseBorder, -padY - caseBorder]
+pcbs:
+  left_board:
+    outlines:
+      main:
+        outline: board_left
+    footprints:
+      mx_hotswap_matrix:
+        what: mx
+        where: /^main_matrix_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      mx_hotswap_thumbs:
+        what: mx
+        where: /^thumbs_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      mx_hotswap_brace:
+        what: mx
+        where: /^brace_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode_main_matrix:
+        what: diode
+        where: /^main_matrix_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [7.9, -3.5]
+          rotate: 90
+      diode_main_thumbs:
+        what: diode
+        where: /^thumbs_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [7.9, -3.5]
+          rotate: 90
+      diode_main_brace:
+        what: diode
+        where: brace_curly_square
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [7.9, -3.5]
+          rotate: 90
+      nice_nano:
+        what: nice_nano
+        where:
+          ref: main_matrix_five_number
+          shift: [20,-6.5]
+          rotate: -90
+      jstph:
+        what: jstph
+        where:
+          ref: brace_curly_square
+          shift: [-3, -7]
+          rotate: 90
+        params:
+          side: B
+          pos: pos
+          neg: GND
+      battery_switch:
+        what: slider
+        where:
+          ref: thumbs_space_thumb
+          shift: [4.4, 17.6]
+          rotate: -42
+        params:
+          side: B
+          from: pos
+          to: RAW
+      hole_bottom_right:
+        what: mountinghole
+        where:
+          ref: main_matrix_five_bottom
+          shift: [pad, -pushY - pad]
+      hole_bottom_left:
+        what: mountinghole
+        where:
+          ref: main_matrix_one_bottom
+          shift: [-pushX + pad, -pushY]
+      hole_top_left:
+        what: mountinghole
+        where:
+          ref: main_matrix_one_qwerty
+          shift: [pad-pushX , pushY+pad]
+      hole_top_right:
+        what: mountinghole
+        where:
+          ref: main_matrix_five_number
+          shift: [0, -pushY]
+      hole_middle:
+        what: mountinghole
+        where:
+          ref: main_matrix_three_qwerty
+          shift: [-pushX, -pushY - 1]
+      front_text: &text
+        what: text
+        where: &textWhere
+          ref: brace_curly_square
+          shift: [-7.3, 15]
+        params: &textParams
+          text: TinLion
+          justify: left
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
