@@ -100,11 +100,58 @@ outlines:
       where: true
       size: [14,14]
       fillet: 0.5
-  keycaps:
-    - what: rectangle
-      where: true
-      size: [U,U]
-      fillet: 0.5
+  left_hole_cutouts:
+    - what: circle
+      radius: 1.2
+      where:
+        ref: main_matrix_five_bottom
+        shift: [9,-pushY-17]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: main_matrix_function_keys_bottom
+        shift: [2, -pushY-2]
+    - what: circle
+      radius : 1.2
+      where:
+        ref: main_matrix_function_keys_number
+        shift: [ 2 , pushY+pad ]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: main_matrix_five_number
+        shift: [ 20, 4 ]
+    - what: circle
+      radius: 1.3
+      where:
+        ref: main_matrix_three_home
+        shift: [ -9.5, pushY+0.4 ]
+  right_hole_cutouts:
+    - what: circle
+      radius: 1.2
+      where:
+        ref: mirror_main_matrix_five_bottom
+        shift: [9,-pushY-17]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: mirror_main_matrix_function_keys_bottom
+        shift: [2, -pushY-2]
+    - what: circle
+      radius : 1.2
+      where:
+        ref: mirror_main_matrix_function_keys_number
+        shift: [ 2 , pushY+pad ]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: mirror_main_matrix_five_number
+        shift: [ 20, 4 ]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: mirror_main_matrix_three_home
+        shift: [ -9.5, pushY+0.4 ]
   board_left:
     - what: polygon
       operation: stack
@@ -179,7 +226,7 @@ outlines:
     - name: board_left
     - operation: subtract
       name: keys
-  xl_board_left:
+  board_left_xl:
     - what: polygon
       fillet: 2
       operation: stack
@@ -212,11 +259,13 @@ outlines:
           shift: [-padX - caseBorder, -padY - caseBorder]
         - ref: main_matrix_function_keys_bottom
           shift: [-padX - caseBorder, -padY - caseBorder]
-  xl_board_keys_cutouts:
-    - name: xl_board_left
+  xl_left_board_keys_cutouts:
+    - name: board_left_xl
     - operation: subtract
       name: keys
-  xl_board_right:
+    - operation: subtract
+      name: left_hole_cutouts
+  board_right_xl:
     - what: polygon
       fillet: 2
       operation: stack
@@ -249,6 +298,12 @@ outlines:
           shift: [-padX - caseBorder, -padY - caseBorder]
         - ref: mirror_main_matrix_function_keys_bottom
           shift: [-padX - caseBorder, -padY - caseBorder]
+  xl_right_board_keys_cutouts:
+    - name: board_right_xl
+    - operation: subtract
+      name: keys
+    - operation: subtract
+      name: right_hole_cutouts
   board_combined:
     - what: polygon
       operation: stack
@@ -318,9 +373,9 @@ pcbs:
   left_board:
     outlines:
       main:
-        outline: board_left
+        outline: board_left_xl
     footprints:
-      mx_hotswap_matrix:
+      left_mx_hotswap_matrix:
         what: mx
         where: /^main_matrix_.*/
         params:
@@ -329,7 +384,7 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      mx_hotswap_thumbs:
+      left_mx_hotswap_thumbs:
         what: mx
         where: /^thumbs_.*/
         params:
@@ -338,7 +393,7 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      mx_hotswap_brace:
+      left_mx_hotswap_brace:
         what: mx
         where: /^brace_.*/
         params:
@@ -347,89 +402,89 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      diode_main_matrix:
+      left_diode_main_matrix:
         what: diode
         where: /^main_matrix_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [7.9, -3.5]
+          shift: [ 8, -3.5 ]
           rotate: 90
-      diode_main_thumbs:
+      left_diode_main_thumbs:
         what: diode
         where: /^thumbs_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [7.9, -3.5]
+          shift: [ 8, -3.5 ]
           rotate: 90
-      diode_main_brace:
+      left_diode_main_brace:
         what: diode
         where: brace_curly_square
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [7.9, -3.5]
+          shift: [ 8, -3.5 ]
           rotate: 90
-      nice_nano:
+      left_nice_nano:
         what: nice_nano
         where:
           ref: main_matrix_five_number
-          shift: [20,-6.5]
+          shift: [ 21,-6.5 ]
           rotate: -90
-      jstph:
+      left_jstph:
         what: jstph
         where:
           ref: brace_curly_square
-          shift: [-3, -7]
+          shift: [ -3, -7 ]
           rotate: 90
         params:
           side: B
           pos: pos
           neg: GND
-      battery_switch:
+      left_battery_switch:
         what: slider
         where:
           ref: thumbs_space_thumb
-          shift: [4.4, 17.6]
+          shift: [ 4.4, 17.6 ]
           rotate: -42
         params:
           side: B
           from: pos
           to: RAW
-      hole_bottom_right:
+      left_hole_bottom_right:
         what: mountinghole
         where:
           ref: main_matrix_five_bottom
-          shift: [pad, -pushY - pad]
-      hole_bottom_left:
+          shift: [9,-pushY-17]
+      left_hole_bottom_left:
         what: mountinghole
         where:
-          ref: main_matrix_one_bottom
-          shift: [-pushX + pad, -pushY]
-      hole_top_left:
+          ref: main_matrix_function_keys_bottom
+          shift: [2, -pushY-2]
+      left_hole_top_left:
         what: mountinghole
         where:
-          ref: main_matrix_one_qwerty
-          shift: [pad-pushX , pushY+pad]
-      hole_top_right:
+          ref: main_matrix_function_keys_number
+          shift: [ 2 , pushY+pad ]
+      left_hole_top_right:
         what: mountinghole
         where:
           ref: main_matrix_five_number
-          shift: [0, -pushY]
-      hole_middle:
+          shift: [ 21, 4 ]
+      left_hole_middle:
         what: mountinghole
         where:
-          ref: main_matrix_three_qwerty
-          shift: [-pushX, -pushY - 1]
-      front_text: &text
+          ref: main_matrix_three_home
+          shift: [ -9.5, pushY+0.4 ]
+      left_front_text: &text
         what: text
         where: &textWhere
           ref: brace_curly_square
-          shift: [-7.3, 15]
+          shift: [ -7.3, 15 ]
         params: &textParams
           text: TinLion
           justify: left
@@ -439,9 +494,9 @@ pcbs:
   right_board:
     outlines:
       main:
-        outline: board_right
+        outline: board_right_xl
     footprints:
-      mx_hotswap_matrix:
+      right_mx_hotswap_matrix:
         what: mx
         where: /^mirror_main_matrix_.*/
         params:
@@ -450,7 +505,7 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      mx_hotswap_thumbs:
+      right_mx_hotswap_thumbs:
         what: mx
         where: /^mirror_thumbs_.*/
         params:
@@ -459,7 +514,7 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      mx_hotswap_brace:
+      right_mx_hotswap_brace:
         what: mx
         where: /^mirror_brace_.*/
         params:
@@ -468,89 +523,89 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-      diode_main_matrix:
+      right_diode_main_matrix:
         what: diode
         where: /^mirror_main_matrix_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [-7.9, -3.5]
+          shift: [ -8, -3.5 ]
           rotate: -90
-      diode_main_thumbs:
+      right_diode_main_thumbs:
         what: diode
         where: /^mirror_thumbs_.*/
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [-7.9, -3.5]
+          shift: [ -8, -3.5 ]
           rotate: -90
-      diode_main_brace:
+      right_diode_main_brace:
         what: diode
         where: mirror_brace_curly_square
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [-7.9, -3.5]
+          shift: [ -8, -3.5 ]
           rotate: -90
-      nice_nano:
+      right_nice_nano:
         what: nice_nano
         where:
           ref: mirror_main_matrix_five_number
-          shift: [20,-6.5]
+          shift: [ 21,-6.5 ]
           rotate: 90
-      jstph:
+      right_jstph:
         what: jstph
         where:
           ref: mirror_brace_curly_square
-          shift: [-3, -7]
+          shift: [ -3, -7 ]
           rotate: 90
         params:
           side: B
           pos: pos
           neg: GND
-      battery_switch:
+      right_battery_switch:
         what: slider
         where:
           ref: mirror_thumbs_space_thumb
-          shift: [4.4, 17.6]
+          shift: [ 4.4, 17.6 ]
           rotate: -42
         params:
           side: B
           from: pos
           to: RAW
-      hole_bottom_right:
+      right_hole_bottom_right:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_bottom
-          shift: [pad, -pushY - pad]
-      hole_bottom_left:
+          shift: [9,-pushY-17]
+      right_hole_bottom_left:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_one_bottom
-          shift: [-pushX + pad, -pushY]
-      hole_top_left:
+          ref: mirror_main_matrix_function_keys_bottom
+          shift: [2, -pushY-2]
+      right_hole_top_left:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_one_qwerty
-          shift: [pad-pushX , pushY+pad]
-      hole_top_right:
+          ref: mirror_main_matrix_function_keys_number
+          shift: [ 2 , pushY+pad ]
+      right_hole_top_right:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_number
-          shift: [0, -pushY]
-      hole_middle:
+          shift: [ 21, 4 ]
+      right_hole_middle:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_three_qwerty
-          shift: [-pushX, -pushY - 1]
-      front_text: &text
+          ref: mirror_main_matrix_three_home
+          shift: [ -9.5, pushY+0.4 ]
+      right_front_text: &text
         what: text
         where: &textWhere
           ref: mirror_brace_curly_square
-          shift: [10, 15]
+          shift: [ 7.3, 15 ]
         params: &textParams
           text: TinLion
           justify: left
@@ -596,7 +651,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ 7.9, -3.5 ]
+          shift: [ 8, -3.5 ]
           rotate: 90
       left_diode_main_thumbs:
         what: diode
@@ -605,7 +660,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ 7.9, -3.5 ]
+          shift: [ 8, -3.5 ]
           rotate: 90
       left_diode_main_brace:
         what: diode
@@ -614,7 +669,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ 7.9, -3.5 ]
+          shift: [ 8, -3.5 ]
           rotate: 90
       left_nice_nano:
         what: nice_nano
@@ -646,27 +701,27 @@ pcbs:
         what: mountinghole
         where:
           ref: main_matrix_five_bottom
-          shift: [ 4, -pushY - pad ]
+          shift: [9,-pushY-17]
       left_hole_bottom_left:
         what: mountinghole
         where:
-          ref: main_matrix_one_bottom
-          shift: [ -pushX+7, -pushY+3 ]
+          ref: main_matrix_function_keys_bottom
+          shift: [2, -pushY-2]
       left_hole_top_left:
         what: mountinghole
         where:
-          ref: main_matrix_one_qwerty
-          shift: [ -pad , pushY+pad ]
+          ref: main_matrix_function_keys_number
+          shift: [ 2 , pushY+pad ]
       left_hole_top_right:
         what: mountinghole
         where:
           ref: main_matrix_five_number
-          shift: [ 2.25, -pushY+1.5 ]
+          shift: [ 21, 4 ]
       left_hole_middle:
         what: mountinghole
         where:
           ref: main_matrix_three_home
-          shift: [ 0, pushY]
+          shift: [ -9.5, pushY-1 ]
       left_front_text: &text
         what: text
         where: &textWhere
@@ -712,7 +767,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ -7.9, -3.5 ]
+          shift: [ -8, -3.5 ]
           rotate: -90
       right_diode_main_thumbs:
         what: diode
@@ -721,7 +776,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ -7.9, -3.5 ]
+          shift: [ -8, -3.5 ]
           rotate: -90
       right_diode_main_brace:
         what: diode
@@ -730,7 +785,7 @@ pcbs:
           from: "{{colrow}}"
           to: "{{row_net}}"
         adjust:
-          shift: [ -7.9, -3.5 ]
+          shift: [ -8, -3.5 ]
           rotate: -90
       right_nice_nano:
         what: nice_nano
@@ -762,27 +817,27 @@ pcbs:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_bottom
-          shift: [ 4, -pushY - pad ]
+          shift: [9,-pushY-17]
       right_hole_bottom_left:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_one_bottom
-          shift: [ -pushX+7, -pushY+3 ]
+          ref: mirror_main_matrix_function_keys_bottom
+          shift: [2, -pushY-2]
       right_hole_top_left:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_one_qwerty
-          shift: [ -pad , pushY+pad ]
+          ref: mirror_main_matrix_function_keys_number
+          shift: [ 2 , pushY+pad ]
       right_hole_top_right:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_number
-          shift: [ 2.25, -pushY+1.5 ]
+          shift: [ 21, 4 ]
       right_hole_middle:
         what: mountinghole
         where:
           ref: mirror_main_matrix_three_home
-          shift: [ 0, pushY ]
+          shift: [ -9.5, pushY-1 ]
       right_front_text: &text
         what: text
         where: &textWhere
@@ -794,3 +849,16 @@ pcbs:
           h_size: 3.0
           v_size: 3.0
           thickness: 0.4
+cases:
+  left_plate:
+    - name: board_left_keys_cutouts
+      extrude: 1.2
+  right_plate:
+    - name: board_right_keys_cutouts
+      extrude: 1.2
+  left_xl_plate:
+    - name: xl_left_board_keys_cutouts
+      extrude: 1.2
+  right_xl_plate:
+    - name: xl_right_board_keys_cutouts
+      extrude: 1.2
