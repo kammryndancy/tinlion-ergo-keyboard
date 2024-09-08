@@ -7,7 +7,7 @@
 module.exports = {
   params: {
     designator: 'MCU',
-    orientation: 'down',
+    orientation: 'up',
     RAW: {type: 'net', value: 'RAW'},
     GND: {type: 'net', value: 'GND'},
     RST: {type: 'net', value: 'RST'},
