@@ -222,10 +222,14 @@ outlines:
     - name: board_right
     - operation: subtract
       name: keys
+    - operation: subtract
+      name: right_hole_cutouts
   board_left_keys_cutouts:
     - name: board_left
     - operation: subtract
       name: keys
+    - operation: subtract
+      name: left_hole_cutouts
   board_left_xl:
     - what: polygon
       fillet: 2
@@ -373,7 +377,7 @@ pcbs:
   left_board:
     outlines:
       main:
-        outline: board_left_xl
+        outline: board_left
     footprints:
       left_mx_hotswap_matrix:
         what: mx
@@ -494,7 +498,7 @@ pcbs:
   right_board:
     outlines:
       main:
-        outline: board_right_xl
+        outline: board_right
     footprints:
       right_mx_hotswap_matrix:
         what: mx
