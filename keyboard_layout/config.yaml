@@ -19,39 +19,39 @@ points:
       columns:
         function_keys:
           key:
-            column_net: P006
+            column_net: P020
         one:
           key:
             stagger: 0.3U
             splay: -0
-            column_net: P031
+            column_net: P022
         two:
           key:
             spread: U+0.5
             stagger: 0.25U
             splay: -3
-            column_net: P008
+            column_net: P024
         three:
           key:
             stagger: -0.05U
-            column_net: P029
+            column_net: P100
         four:
           key:
             stagger: -0.25U
-            column_net: P017
+            column_net: P011
         five:
           key:
             stagger: -1
-            column_net: P020
+            column_net: P104
       rows:
         bottom:
-          row_net: P111
-        home:
-          row_net: P113
-        qwerty:
           row_net: P115
-        number:
+        home:
           row_net: P002
+        qwerty:
+          row_net: P029
+        number:
+          row_net: P031
     thumbs:
       anchor:
         ref: main_matrix_three_bottom
@@ -61,25 +61,25 @@ points:
         near:
           key:
             stagger: 1
-            column_net: P029
+            column_net: P100
         home:
           key:
             stagger: 0
-            column_net: P017
+            column_net: P011
         far:
           key:
             stagger: 1.25
-            column_net: P020
+            column_net: P104
         space:
           key:
-            column_net: P104
+            column_net: P017
             height: 1.5u
             stagger: 11
             shift: [7,0]
             splay: -27
       rows:
         thumb:
-          row_net: P010
+          row_net: P113
     brace:
       anchor:
         ref: main_matrix_five_home
@@ -87,10 +87,10 @@ points:
       columns:
         curly:
           key:
-            column_net: P104
+            column_net: P017
       rows:
         square:
-          row_net: P113
+          row_net: P002
   mirror:
     ref: main_matrix_five_number
     distance: 90
@@ -110,22 +110,27 @@ outlines:
       radius: 1.2
       where:
         ref: main_matrix_function_keys_bottom
-        shift: [2, -pushY-2]
+        shift: [2, -pushY]
     - what: circle
       radius : 1.2
       where:
         ref: main_matrix_function_keys_number
-        shift: [ 2 , pushY+pad ]
+        shift: [ 7 , pushY+pad ]
     - what: circle
       radius: 1.2
       where:
         ref: main_matrix_five_number
-        shift: [ 20, 4 ]
+        shift: [ 0, 9]
     - what: circle
-      radius: 1.3
+      radius: 1.2
       where:
-        ref: main_matrix_three_home
-        shift: [ -9.5, pushY+0.4 ]
+        ref: main_matrix_four_home
+        shift: [ 0, pushY-0.25 ]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: main_matrix_two_qwerty
+        shift: [ -pushX, -pushY-pad ]
   right_hole_cutouts:
     - what: circle
       radius: 1.2
@@ -136,22 +141,27 @@ outlines:
       radius: 1.2
       where:
         ref: mirror_main_matrix_function_keys_bottom
-        shift: [2, -pushY-2]
+        shift: [2, -pushY]
     - what: circle
       radius : 1.2
       where:
         ref: mirror_main_matrix_function_keys_number
-        shift: [ 2 , pushY+pad ]
+        shift: [ 7 , pushY+pad ]
     - what: circle
       radius: 1.2
       where:
         ref: mirror_main_matrix_five_number
-        shift: [ 20, 4 ]
+        shift: [ 0, 9]
     - what: circle
       radius: 1.2
       where:
-        ref: mirror_main_matrix_three_home
-        shift: [ -9.5, pushY+0.4 ]
+        ref: mirror_main_matrix_four_home
+        shift: [0, pushY-0.25]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: mirror_main_matrix_two_qwerty
+        shift: [ -pushX, -pushY-pad ]
   board_left:
     - what: polygon
       operation: stack
@@ -248,7 +258,7 @@ outlines:
         - ref: main_matrix_five_number
           shift: [padX + caseBorder, padY + caseBorder]
         - ref: main_matrix_five_number
-          shift: [31 + caseBorder, padY + caseBorder]
+          shift: [33 + caseBorder, padY + caseBorder]
         - ref: brace_curly_square
           shift: [padX + caseBorder, -padY - caseBorder]
         - ref: thumbs_space_thumb
@@ -287,7 +297,7 @@ outlines:
         - ref: mirror_main_matrix_five_number
           shift: [padX + caseBorder, padY + caseBorder]
         - ref: mirror_main_matrix_five_number
-          shift: [31 + caseBorder, padY + caseBorder]
+          shift: [33 + caseBorder, padY + caseBorder]
         - ref: mirror_brace_curly_square
           shift: [padX + caseBorder, -padY - caseBorder]
         - ref: mirror_thumbs_space_thumb
@@ -435,9 +445,11 @@ pcbs:
           rotate: 90
       left_nice_nano:
         what: nice_nano
+        params:
+          orientation: up
         where:
           ref: main_matrix_five_number
-          shift: [ 21,-6.5 ]
+          shift: [ 21.75,-8.2 ]
           rotate: -90
       left_jstph:
         what: jstph
@@ -468,29 +480,34 @@ pcbs:
         what: mountinghole
         where:
           ref: main_matrix_function_keys_bottom
-          shift: [2, -pushY-2]
+          shift: [2, -pushY]
       left_hole_top_left:
         what: mountinghole
         where:
           ref: main_matrix_function_keys_number
-          shift: [ 2 , pushY+pad ]
+          shift: [ 7 , pushY+pad ]
       left_hole_top_right:
         what: mountinghole
         where:
           ref: main_matrix_five_number
-          shift: [ 21, 4 ]
+          shift: [ 0, 9]
       left_hole_middle:
         what: mountinghole
         where:
-          ref: main_matrix_three_home
-          shift: [ -9.5, pushY+0.4 ]
+          ref: main_matrix_four_home
+          shift: [ 0, pushY-0.25 ]
+      left_hole_middle_left:
+        what: mountinghole
+        where:
+          ref: main_matrix_two_qwerty
+          shift: [ -pushX, -pushY-pad ]
       left_front_text: &text
         what: text
         where: &textWhere
           ref: brace_curly_square
           shift: [ -7.3, 15 ]
         params: &textParams
-          text: TinLion
+          text: TINLION
           justify: left
           h_size: 3.0
           v_size: 3.0
@@ -556,9 +573,11 @@ pcbs:
           rotate: -90
       right_nice_nano:
         what: nice_nano
+        params:
+          orientation: up
         where:
           ref: mirror_main_matrix_five_number
-          shift: [ 21,-6.5 ]
+          shift: [ 21.75,-8.2 ]
           rotate: 90
       right_jstph:
         what: jstph
@@ -589,29 +608,34 @@ pcbs:
         what: mountinghole
         where:
           ref: mirror_main_matrix_function_keys_bottom
-          shift: [2, -pushY-2]
+          shift: [2, -pushY]
       right_hole_top_left:
         what: mountinghole
         where:
           ref: mirror_main_matrix_function_keys_number
-          shift: [ 2 , pushY+pad ]
+          shift: [ 7 , pushY+pad ]
       right_hole_top_right:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_number
-          shift: [ 21, 4 ]
+          shift: [ 0, 9]
       right_hole_middle:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_three_home
-          shift: [ -9.5, pushY+0.4 ]
+          ref: mirror_main_matrix_four_home
+          shift: [0, pushY-0.25]
+      right_hole_middle_left:
+        what: mountinghole
+        where:
+          ref: mirror_main_matrix_two_qwerty
+          shift: [ -pushX, -pushY-pad ]
       right_front_text: &text
         what: text
         where: &textWhere
           ref: mirror_brace_curly_square
           shift: [ 7.3, 15 ]
         params: &textParams
-          text: TinLion
+          text: TINLION
           justify: left
           h_size: 3.0
           v_size: 3.0
@@ -677,9 +701,11 @@ pcbs:
           rotate: 90
       left_nice_nano:
         what: nice_nano
+        params:
+          orientation: up
         where:
           ref: main_matrix_five_number
-          shift: [ 21,-6.5 ]
+          shift: [ 21.75,-8.2 ]
           rotate: -90
       left_jstph:
         what: jstph
@@ -710,29 +736,34 @@ pcbs:
         what: mountinghole
         where:
           ref: main_matrix_function_keys_bottom
-          shift: [2, -pushY-2]
+          shift: [2, -pushY]
       left_hole_top_left:
         what: mountinghole
         where:
           ref: main_matrix_function_keys_number
-          shift: [ 2 , pushY+pad ]
+          shift: [ 7 , pushY+pad ]
       left_hole_top_right:
         what: mountinghole
         where:
           ref: main_matrix_five_number
-          shift: [ 21, 4 ]
+          shift: [ 0, 9]
       left_hole_middle:
         what: mountinghole
         where:
-          ref: main_matrix_three_home
-          shift: [ -9.5, pushY-1 ]
+          ref: main_matrix_four_home
+          shift: [ 0, pushY-0.25 ]
+      left_hole_middle_left:
+        what: mountinghole
+        where:
+          ref: main_matrix_two_qwerty
+          shift: [ -pushX, -pushY-pad ]
       left_front_text: &text
         what: text
         where: &textWhere
           ref: brace_curly_square
           shift: [ -7.3, 15 ]
         params: &textParams
-          text: TinLion
+          text: TINLION
           justify: left
           h_size: 3.0
           v_size: 3.0
@@ -793,9 +824,11 @@ pcbs:
           rotate: -90
       right_nice_nano:
         what: nice_nano
+        params:
+          orientation: up
         where:
           ref: mirror_main_matrix_five_number
-          shift: [ 21,-6.5 ]
+          shift: [ 21.75,-8.2 ]
           rotate: 90
       right_jstph:
         what: jstph
@@ -826,29 +859,34 @@ pcbs:
         what: mountinghole
         where:
           ref: mirror_main_matrix_function_keys_bottom
-          shift: [2, -pushY-2]
+          shift: [2, -pushY]
       right_hole_top_left:
         what: mountinghole
         where:
           ref: mirror_main_matrix_function_keys_number
-          shift: [ 2 , pushY+pad ]
+          shift: [ 7 , pushY+pad ]
       right_hole_top_right:
         what: mountinghole
         where:
           ref: mirror_main_matrix_five_number
-          shift: [ 21, 4 ]
+          shift: [ 0, 9]
       right_hole_middle:
         what: mountinghole
         where:
-          ref: mirror_main_matrix_three_home
-          shift: [ -9.5, pushY-1 ]
+          ref: mirror_main_matrix_four_home
+          shift: [0, pushY-0.25]
+      right_hole_middle_left:
+        what: mountinghole
+        where:
+          ref: mirror_main_matrix_two_qwerty
+          shift: [ -pushX, -pushY-pad ]
       right_front_text: &text
         what: text
         where: &textWhere
           ref: mirror_brace_curly_square
-          shift: [ 7.3, 15 ]
+          shift: [ 9.3, 15 ]
         params: &textParams
-          text: TinLion
+          text: TINLION
           justify: left
           h_size: 3.0
           v_size: 3.0
@@ -856,13 +894,13 @@ pcbs:
 cases:
   left_plate:
     - name: board_left_keys_cutouts
-      extrude: 1.2
+      extrude: 1.5
   right_plate:
     - name: board_right_keys_cutouts
-      extrude: 1.2
+      extrude: 1.5
   left_xl_plate:
     - name: xl_left_board_keys_cutouts
-      extrude: 1.2
+      extrude: 1.5
   right_xl_plate:
     - name: xl_right_board_keys_cutouts
-      extrude: 1.2
+      extrude: 1.5

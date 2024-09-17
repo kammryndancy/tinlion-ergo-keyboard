@@ -256,7 +256,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P006"
+        "pattern": "P020"
       },
       {
         "netclass": "Default",
@@ -276,7 +276,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P031"
+        "pattern": "P022"
       },
       {
         "netclass": "Default",
@@ -296,7 +296,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P008"
+        "pattern": "P024"
       },
       {
         "netclass": "Default",
@@ -316,7 +316,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P029"
+        "pattern": "P100"
       },
       {
         "netclass": "Default",
@@ -336,7 +336,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P017"
+        "pattern": "P011"
       },
       {
         "netclass": "Default",
@@ -356,7 +356,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P020"
+        "pattern": "P104"
       },
       {
         "netclass": "Default",
@@ -388,7 +388,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P104"
+        "pattern": "P017"
       },
       {
         "netclass": "Default",
@@ -400,14 +400,6 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P111"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P113"
-      },
-      {
-        "netclass": "Default",
         "pattern": "P115"
       },
       {
@@ -416,7 +408,15 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P010"
+        "pattern": "P029"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P031"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P113"
       },
       {
         "netclass": "Default",
@@ -436,23 +436,23 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P111"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P010"
+      },
+      {
+        "netclass": "Default",
         "pattern": "P009"
       },
       {
         "netclass": "Default",
-        "pattern": "P022"
+        "pattern": "P006"
       },
       {
         "netclass": "Default",
-        "pattern": "P024"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P100"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P011"
+        "pattern": "P008"
       },
       {
         "netclass": "Default",
@@ -481,7 +481,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../gerberfiles/",
+      "plot": "../gerber_test/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

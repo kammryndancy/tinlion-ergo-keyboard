@@ -1,13 +1,15 @@
-function xl_right_board_keys_cutouts_extrude_1_2_outline_fn(){
-    return new CSG.Path2D([[299.2321942,-11.4047842],[299.2321942,68.5380634]]).appendArc([297.808277,70.4532993],{"radius":2,"clockwise":false,"large":false}).appendPoint([280.2953439,75.7210052]).appendArc([280.1679305,75.7547936],{"radius":2,"clockwise":false,"large":false}).appendPoint([257.2938457,81.0204544]).appendArc([256.698309,81.0660303],{"radius":2,"clockwise":false,"large":false}).appendPoint([212.2859042,77.795832]).appendArc([211.8456346,77.7131079],{"radius":2,"clockwise":false,"large":false}).appendPoint([193.521482,72.0857631]).appendArc([193.1438459,72.008642],{"radius":2,"clockwise":true,"large":false}).appendPoint([174.4670777,70.0414201]).appendArc([174.3622489,70.0331581],{"radius":2,"clockwise":true,"large":false}).appendPoint([156.9773095,69.122052]).appendArc([155.0854781,67.0065805],{"radius":2,"clockwise":false,"large":false}).appendPoint([159.0872383,-0.5796558]).appendArc([159.0176244,-1.2336824],{"radius":2,"clockwise":true,"large":false}).appendPoint([155.8901095,-12.4808174]).appendArc([156.2409775,-14.2479545],{"radius":2,"clockwise":false,"large":false}).appendPoint([171.0509827,-33.2038967]).appendArc([172.6433626,-33.9725068],{"radius":2,"clockwise":false,"large":false}).appendPoint([189.7034599,-33.8329634]).appendArc([190.0303393,-33.8033571],{"radius":2,"clockwise":false,"large":false}).appendPoint([252.9438119,-22.8436125]).appendArc([253.0156323,-22.8297434],{"radius":2,"clockwise":false,"large":false}).appendPoint([297.6472524,-13.361242]).appendArc([299.2321942,-11.4047842],{"radius":2,"clockwise":false,"large":false}).close().innerToCAG()
+function xl_right_board_keys_cutouts_extrude_1_5_outline_fn(){
+    return new CSG.Path2D([[299.2321942,-11.4047842],[299.2321942,68.5380634]]).appendArc([297.808277,70.4532993],{"radius":2,"clockwise":false,"large":false}).appendPoint([280.2953439,75.7210052]).appendArc([280.1679305,75.7547936],{"radius":2,"clockwise":false,"large":false}).appendPoint([257.2938457,81.0204544]).appendArc([256.698309,81.0660303],{"radius":2,"clockwise":false,"large":false}).appendPoint([212.2859042,77.795832]).appendArc([211.8456346,77.7131079],{"radius":2,"clockwise":false,"large":false}).appendPoint([193.521482,72.0857631]).appendArc([193.1438459,72.008642],{"radius":2,"clockwise":true,"large":false}).appendPoint([174.4670777,70.0414201]).appendArc([174.3622489,70.0331581],{"radius":2,"clockwise":true,"large":false}).appendPoint([155.0382745,69.0204315]).appendArc([153.1506288,66.8480428],{"radius":2,"clockwise":false,"large":false}).appendPoint([159.0751757,-0.5510653]).appendArc([159.0097475,-1.2620091],{"radius":2,"clockwise":true,"large":false}).appendPoint([155.8901095,-12.4808174]).appendArc([156.2409775,-14.2479545],{"radius":2,"clockwise":false,"large":false}).appendPoint([171.0509827,-33.2038967]).appendArc([172.6433626,-33.9725068],{"radius":2,"clockwise":false,"large":false}).appendPoint([189.7034599,-33.8329634]).appendArc([190.0303393,-33.8033571],{"radius":2,"clockwise":false,"large":false}).appendPoint([252.9438119,-22.8436125]).appendArc([253.0156323,-22.8297434],{"radius":2,"clockwise":false,"large":false}).appendPoint([297.6472524,-13.361242]).appendArc([299.2321942,-11.4047842],{"radius":2,"clockwise":false,"large":false}).close().innerToCAG()
 .subtract(
-    CAG.circle({"center":[236.706246,37.9144731],"radius":1.2})
+    CAG.circle({"center":[255.783546,37.414717],"radius":1.2})
 .union(
-    CAG.circle({"center":[167.9216626,60.6582358],"radius":1.2})
+    CAG.circle({"center":[208.5285727,31.017816],"radius":1.2})
 ).union(
-    CAG.circle({"center":[284.2071942,68.525],"radius":1.2})
+    CAG.circle({"center":[187.6325735,66.6981026],"radius":1.2})
 ).union(
-    CAG.circle({"center":[284.2071942,-11.525],"radius":1.2})
+    CAG.circle({"center":[279.2071942,68.525],"radius":1.2})
+).union(
+    CAG.circle({"center":[284.2071942,-9.525],"radius":1.2})
 ).union(
     CAG.circle({"center":[183.4872921,-26.1711188],"radius":1.2})
 ).union(
@@ -68,7 +70,7 @@ function xl_right_board_keys_cutouts_extrude_1_2_outline_fn(){
     new CSG.Path2D([[214.0130391,-24.2739472],[226.7741925,-21.7934302]]).appendArc([227.1696016,-21.2072121],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([224.6890846,-8.4460587]).appendArc([224.1028665,-8.0506496],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([211.3417131,-10.5311666]).appendArc([210.946304,-11.1173847],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([213.426821,-23.8785381]).appendArc([214.0130391,-24.2739472],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
 ).union(
     new CSG.Path2D([[195.1236114,-26.6722842],[207.8847648,-24.1917672]]).appendArc([208.2801739,-23.6055491],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([205.7996569,-10.8443957]).appendArc([205.2134388,-10.4489866],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([192.4522854,-12.9295036]).appendArc([192.0568763,-13.5157217],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([194.5373933,-26.2768751]).appendArc([195.1236114,-26.6722842],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
-)).extrude({ offset: [0, 0, 1.2] });
+)).extrude({ offset: [0, 0, 1.5] });
 }
 
 
@@ -78,7 +80,7 @@ function xl_right_board_keys_cutouts_extrude_1_2_outline_fn(){
                     
 
                 // creating part 0 of case right_xl_plate
-                let right_xl_plate__part_0 = xl_right_board_keys_cutouts_extrude_1_2_outline_fn();
+                let right_xl_plate__part_0 = xl_right_board_keys_cutouts_extrude_1_5_outline_fn();
 
                 // make sure that rotations are relative
                 let right_xl_plate__part_0_bounds = right_xl_plate__part_0.getBounds();

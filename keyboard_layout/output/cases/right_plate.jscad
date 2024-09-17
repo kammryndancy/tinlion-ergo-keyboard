@@ -1,13 +1,15 @@
-function board_right_keys_cutouts_extrude_1_2_outline_fn(){
+function board_right_keys_cutouts_extrude_1_5_outline_fn(){
     return new CSG.Path2D([[297.7321942,-9.9135778],[297.7321942,67.0380634]]).appendArc([296.308277,68.9532993],{"radius":2,"clockwise":false,"large":false}).appendPoint([278.7976217,74.2203201]).appendArc([278.6655754,74.2551692],{"radius":2,"clockwise":false,"large":false}).appendPoint([255.8736993,79.444903]).appendArc([255.2797883,79.4891945],{"radius":2,"clockwise":false,"large":false}).appendPoint([213.8608047,76.3766161]).appendArc([213.4235423,76.2941157],{"radius":2,"clockwise":false,"large":false}).appendPoint([195.0979302,70.6663227]).appendArc([194.7202941,70.5892016],{"radius":2,"clockwise":true,"large":false}).appendPoint([176.0435259,68.6219797]).appendArc([175.9386971,68.6137177],{"radius":2,"clockwise":true,"large":false}).appendPoint([156.5571088,67.5979717]).appendArc([154.6653133,65.4818946],{"radius":2,"clockwise":false,"large":false}).appendPoint([158.5154699,0.7887568]).appendArc([158.4903715,0.332738],{"radius":2,"clockwise":true,"large":false}).appendPoint([156.6110596,-10.654238]).appendArc([157.0064071,-12.2227617],{"radius":2,"clockwise":false,"large":false}).appendPoint([173.0608362,-32.7714939]).appendArc([174.8158556,-33.5321448],{"radius":2,"clockwise":false,"large":false}).appendPoint([190.9727323,-32.0802961]).appendArc([191.1350833,-32.0589773],{"radius":2,"clockwise":false,"large":false}).appendPoint([251.1789651,-21.6584222]).appendArc([251.2630781,-21.6419888],{"radius":2,"clockwise":false,"large":false}).appendPoint([296.157656,-11.8677994]).appendArc([297.7321942,-9.9135778],{"radius":2,"clockwise":false,"large":false}).close().innerToCAG()
 .subtract(
-    CAG.circle({"center":[236.706246,37.9144731],"radius":1.2})
+    CAG.circle({"center":[255.783546,37.414717],"radius":1.2})
 .union(
-    CAG.circle({"center":[167.9216626,60.6582358],"radius":1.2})
+    CAG.circle({"center":[208.5285727,31.017816],"radius":1.2})
 ).union(
-    CAG.circle({"center":[284.2071942,68.525],"radius":1.2})
+    CAG.circle({"center":[187.6325735,66.6981026],"radius":1.2})
 ).union(
-    CAG.circle({"center":[284.2071942,-11.525],"radius":1.2})
+    CAG.circle({"center":[279.2071942,68.525],"radius":1.2})
+).union(
+    CAG.circle({"center":[284.2071942,-9.525],"radius":1.2})
 ).union(
     CAG.circle({"center":[183.4872921,-26.1711188],"radius":1.2})
 ).union(
@@ -68,7 +70,7 @@ function board_right_keys_cutouts_extrude_1_2_outline_fn(){
     new CSG.Path2D([[214.0130391,-24.2739472],[226.7741925,-21.7934302]]).appendArc([227.1696016,-21.2072121],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([224.6890846,-8.4460587]).appendArc([224.1028665,-8.0506496],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([211.3417131,-10.5311666]).appendArc([210.946304,-11.1173847],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([213.426821,-23.8785381]).appendArc([214.0130391,-24.2739472],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
 ).union(
     new CSG.Path2D([[195.1236114,-26.6722842],[207.8847648,-24.1917672]]).appendArc([208.2801739,-23.6055491],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([205.7996569,-10.8443957]).appendArc([205.2134388,-10.4489866],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([192.4522854,-12.9295036]).appendArc([192.0568763,-13.5157217],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([194.5373933,-26.2768751]).appendArc([195.1236114,-26.6722842],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
-)).extrude({ offset: [0, 0, 1.2] });
+)).extrude({ offset: [0, 0, 1.5] });
 }
 
 
@@ -78,7 +80,7 @@ function board_right_keys_cutouts_extrude_1_2_outline_fn(){
                     
 
                 // creating part 0 of case right_plate
-                let right_plate__part_0 = board_right_keys_cutouts_extrude_1_2_outline_fn();
+                let right_plate__part_0 = board_right_keys_cutouts_extrude_1_5_outline_fn();
 
                 // make sure that rotations are relative
                 let right_plate__part_0_bounds = right_plate__part_0.getBounds();

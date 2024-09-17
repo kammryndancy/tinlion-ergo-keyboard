@@ -1,15 +1,17 @@
-function xl_left_board_keys_cutouts_extrude_1_2_outline_fn(){
-    return new CSG.Path2D([[-13.025,-11.4047842],[-13.025,68.5380634]]).appendArc([-11.6010828,70.4532993],{"radius":2,"clockwise":true,"large":false}).appendPoint([5.9118503,75.7210052]).appendArc([6.0392637,75.7547936],{"radius":2,"clockwise":true,"large":false}).appendPoint([28.9133485,81.0204544]).appendArc([29.5088852,81.0660303],{"radius":2,"clockwise":true,"large":false}).appendPoint([73.92129,77.795832]).appendArc([74.3615596,77.7131079],{"radius":2,"clockwise":true,"large":false}).appendPoint([92.6857122,72.0857631]).appendArc([93.0633483,72.008642],{"radius":2,"clockwise":false,"large":false}).appendPoint([111.7401165,70.0414201]).appendArc([111.8449453,70.0331581],{"radius":2,"clockwise":false,"large":false}).appendPoint([129.2298847,69.122052]).appendArc([131.1217161,67.0065805],{"radius":2,"clockwise":true,"large":false}).appendPoint([127.1199559,-0.5796558]).appendArc([127.1895698,-1.2336824],{"radius":2,"clockwise":false,"large":false}).appendPoint([130.3170847,-12.4808174]).appendArc([129.9662167,-14.2479545],{"radius":2,"clockwise":true,"large":false}).appendPoint([115.1562115,-33.2038967]).appendArc([113.5638316,-33.9725068],{"radius":2,"clockwise":true,"large":false}).appendPoint([96.5037343,-33.8329634]).appendArc([96.1768549,-33.8033571],{"radius":2,"clockwise":true,"large":false}).appendPoint([33.2633823,-22.8436125]).appendArc([33.1915619,-22.8297434],{"radius":2,"clockwise":true,"large":false}).appendPoint([-11.4400582,-13.361242]).appendArc([-13.025,-11.4047842],{"radius":2,"clockwise":true,"large":false}).close().innerToCAG()
+function xl_left_board_keys_cutouts_extrude_1_5_outline_fn(){
+    return new CSG.Path2D([[-13.025,-11.4047842],[-13.025,68.5380634]]).appendArc([-11.6010828,70.4532993],{"radius":2,"clockwise":true,"large":false}).appendPoint([5.9118503,75.7210052]).appendArc([6.0392637,75.7547936],{"radius":2,"clockwise":true,"large":false}).appendPoint([28.9133485,81.0204544]).appendArc([29.5088852,81.0660303],{"radius":2,"clockwise":true,"large":false}).appendPoint([73.92129,77.795832]).appendArc([74.3615596,77.7131079],{"radius":2,"clockwise":true,"large":false}).appendPoint([92.6857122,72.0857631]).appendArc([93.0633483,72.008642],{"radius":2,"clockwise":false,"large":false}).appendPoint([111.7401165,70.0414201]).appendArc([111.8449453,70.0331581],{"radius":2,"clockwise":false,"large":false}).appendPoint([131.1689197,69.0204315]).appendArc([133.0565654,66.8480428],{"radius":2,"clockwise":true,"large":false}).appendPoint([127.1320185,-0.5510653]).appendArc([127.1974467,-1.2620091],{"radius":2,"clockwise":false,"large":false}).appendPoint([130.3170847,-12.4808174]).appendArc([129.9662167,-14.2479545],{"radius":2,"clockwise":true,"large":false}).appendPoint([115.1562115,-33.2038967]).appendArc([113.5638316,-33.9725068],{"radius":2,"clockwise":true,"large":false}).appendPoint([96.5037343,-33.8329634]).appendArc([96.1768549,-33.8033571],{"radius":2,"clockwise":true,"large":false}).appendPoint([33.2633823,-22.8436125]).appendArc([33.1915619,-22.8297434],{"radius":2,"clockwise":true,"large":false}).appendPoint([-11.4400582,-13.361242]).appendArc([-13.025,-11.4047842],{"radius":2,"clockwise":true,"large":false}).close().innerToCAG()
 .subtract(
-    CAG.circle({"center":[118.2855316,60.6582358],"radius":1.2})
+    CAG.circle({"center":[30.4236482,37.414717],"radius":1.2})
 .union(
-    CAG.circle({"center":[2,68.525],"radius":1.2})
+    CAG.circle({"center":[77.6786215,31.017816],"radius":1.2})
 ).union(
-    CAG.circle({"center":[2,-11.525],"radius":1.2})
+    CAG.circle({"center":[98.5746207,66.6981026],"radius":1.2})
+).union(
+    CAG.circle({"center":[7,68.525],"radius":1.2})
+).union(
+    CAG.circle({"center":[2,-9.525],"radius":1.2})
 ).union(
     CAG.circle({"center":[102.7199021,-26.1711188],"radius":1.2})
-).union(
-    CAG.circle({"center":[49.5009482,37.9144731],"radius":1.3})
 ).union(
     new CSG.Path2D([[91.2461535,51.0602138],[104.2283373,50.3798464]]).appendArc([104.7538201,50.8529932],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([105.4341875,63.835177]).appendArc([104.9610407,64.3606598],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([91.9788569,65.0410272]).appendArc([91.4533741,64.5678804],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([90.7730067,51.5856966]).appendArc([91.2461535,51.0602138],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
 ).union(
@@ -68,7 +70,7 @@ function xl_left_board_keys_cutouts_extrude_1_2_outline_fn(){
     new CSG.Path2D([[59.4330017,-21.7934302],[72.1941551,-24.2739472]]).appendArc([72.7803732,-23.8785381],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([75.2608902,-11.1173847]).appendArc([74.8654811,-10.5311666],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([62.1043277,-8.0506496]).appendArc([61.5181096,-8.4460587],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([59.0375926,-21.2072121]).appendArc([59.4330017,-21.7934302],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
 ).union(
     new CSG.Path2D([[78.3224294,-24.1917672],[91.0835828,-26.6722842]]).appendArc([91.6698009,-26.2768751],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([94.1503179,-13.5157217]).appendArc([93.7549088,-12.9295036],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([80.9937554,-10.4489866]).appendArc([80.4075373,-10.8443957],{"radius":0.5,"clockwise":false,"large":false}).appendPoint([77.9270203,-23.6055491]).appendArc([78.3224294,-24.1917672],{"radius":0.5,"clockwise":false,"large":false}).close().innerToCAG()
-)).extrude({ offset: [0, 0, 1.2] });
+)).extrude({ offset: [0, 0, 1.5] });
 }
 
 
@@ -78,7 +80,7 @@ function xl_left_board_keys_cutouts_extrude_1_2_outline_fn(){
                     
 
                 // creating part 0 of case left_xl_plate
-                let left_xl_plate__part_0 = xl_left_board_keys_cutouts_extrude_1_2_outline_fn();
+                let left_xl_plate__part_0 = xl_left_board_keys_cutouts_extrude_1_5_outline_fn();
 
                 // make sure that rotations are relative
                 let left_xl_plate__part_0_bounds = left_xl_plate__part_0.getBounds();

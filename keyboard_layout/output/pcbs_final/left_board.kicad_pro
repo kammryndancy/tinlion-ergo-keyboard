@@ -51,7 +51,13 @@
           "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
@@ -172,7 +178,9 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -199,7 +207,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -221,7 +234,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "combined_board.kicad_pro",
+    "filename": "left_board.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -473,122 +486,6 @@
       {
         "netclass": "Default",
         "pattern": "pos"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_function_keys_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_function_keys_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_function_keys_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_function_keys_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_one_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_one_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_one_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_one_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_two_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_two_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_two_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_two_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_three_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_three_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_three_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_three_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_four_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_four_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_four_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_four_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_five_bottom"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_five_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_five_qwerty"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_five_number"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_near_thumb"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_home_thumb"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_far_thumb"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_space_thumb"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "mirror_curly_square"
       }
     ]
   },
@@ -597,7 +494,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../gerber_test/",
+      "plot": "../gerber/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
